@@ -1,0 +1,14 @@
+# Hệ điều hành
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Text Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Log files & temp
+*.log
+*.tmp
