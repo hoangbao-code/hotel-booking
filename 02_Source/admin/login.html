@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng Ký / Đăng Nhập - Grand Hotel</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/style-admin.css">
+</head>
+<body class="login-body-bg">
+
+  <div class="admin-login-card">
+    <div class="login-header">
+      <div style="font-size: 32px; margin-bottom: 8px;">🏨</div>
+      <h1>GRAND HOTEL</h1>
+      <p>Cổng Đăng Nhập & Đăng Ký Thành Viên</p>
+    </div>
+
+    <div class="auth-tabs">
+      <button type="button" class="auth-tab-btn active" id="tab-login-btn" onclick="switchAuthTab('login')">Đăng Nhập</button>
+      <button type="button" class="auth-tab-btn" id="tab-register-btn" onclick="switchAuthTab('register')">Đăng Ký Tài Khoản</button>
+    </div>
+
+    <div id="login-pane">
+      <form id="login-form" action="dashboard.html" method="GET" onsubmit="handleLoginSubmit(event)">
+        <div class="role-badge-selector">
+          <label class="role-badge-option">
+            <input type="radio" name="account_role" value="customer" id="role-customer" checked onchange="toggleRole()">
+            <span>Khách Hàng</span>
+          </label>
+          <label class="role-badge-option">
+            <input type="radio" name="account_role" value="staff" id="role-staff" onchange="toggleRole()">
+            <span>Quản Trị / Lễ Tân</span>
+          </label>
+        </div>
+
+        <div class="form-field-group">
+          <label for="auth-identifier" id="label-identifier">Số điện thoại hoặc Email</label>
+          <input type="text" id="auth-identifier" name="username" required placeholder="0901234567 hoặc email@domain.com" value="admin@grandhotel.vn">
+        </div>
+
+        <div class="form-field-group">
+          <label for="auth-password">Mật khẩu</label>
+          <input type="password" id="auth-password" name="password" required placeholder="••••••••" value="12345678">
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; font-size: 13px;">
+          <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+            <input type="checkbox" checked> Ghi nhớ đăng nhập
+          </label>
+          <a href="#" style="color: var(--secondary-color);" onclick="alert('Vui lòng liên hệ Hotline 1900 6868 hoặc Quản trị viên để đặt lại mật khẩu.')">Quên mật khẩu?</a>
+        </div>
+
+        <button type="submit" class="btn btn-gold" style="width: 100%; padding: 14px; font-size: 15px;" id="login-submit-btn">
+          ĐĂNG NHẬP
+        </button>
+      </form>
+    </div>
+
+    <div id="register-pane" style="display: none;">
+      <form action="../index.html" method="GET" onsubmit="alert('Đăng ký tài khoản thành viên thành công! Chào mừng quý khách đến với Grand Hotel.');">
+        <div class="form-field-group">
+          <label for="reg-fullname">Họ và tên quý khách</label>
+          <input type="text" id="reg-fullname" name="fullname" required placeholder="Nguyễn Văn A">
+        </div>
+
+        <div class="form-field-group">
+          <label for="reg-phone">Số điện thoại liên hệ</label>
+          <input type="tel" id="reg-phone" name="phone" required placeholder="0901 234 567">
+        </div>
+
+        <div class="form-field-group">
+          <label for="reg-email">Địa chỉ Email</label>
+          <input type="email" id="reg-email" name="email" required placeholder="khachhang@gmail.com">
+        </div>
+
+        <div class="form-field-group">
+          <label for="reg-pass">Mật khẩu bảo mật</label>
+          <input type="password" id="reg-pass" name="reg_password" required placeholder="Tối thiểu 8 ký tự">
+        </div>
+
+        <div class="form-field-group">
+          <label for="reg-repass">Nhập lại mật khẩu</label>
+          <input type="password" id="reg-repass" name="confirm_password" required placeholder="Nhập lại mật khẩu trên">
+        </div>
+
+        <div style="margin-bottom: 22px; font-size: 13px;">
+          <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+            <input type="checkbox" required style="margin-top: 3px;">
+            <span>Tôi đồng ý với <a href="../about.html" style="color: var(--secondary-color);">Điều khoản dịch vụ</a> và Chính sách bảo mật của Grand Hotel</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-gold" style="width: 100%; padding: 14px; font-size: 15px;">
+          TẠO TÀI KHOẢN MỚI
+        </button>
+      </form>
+    </div>
+
+    <div style="text-align: center; margin-top: 26px; font-size: 13.5px;">
+      <a href="../index.html" style="color: var(--primary-color); font-weight: 600;">&larr; Quay lại Trang Chủ Grand Hotel</a>
+    </div>
+  </div>
+
+  <script>
+    function switchAuthTab(tab) {
+      var loginPane = document.getElementById('login-pane');
+      var registerPane = document.getElementById('register-pane');
+      var loginBtn = document.getElementById('tab-login-btn');
+      var registerBtn = document.getElementById('tab-register-btn');
+      if (tab === 'login') {
+        loginPane.style.display = 'block';
+        registerPane.style.display = 'none';
+        loginBtn.classList.add('active');
+        registerBtn.classList.remove('active');
+      } else {
+        loginPane.style.display = 'none';
+        registerPane.style.display = 'block';
+        loginBtn.classList.remove('active');
+        registerBtn.classList.add('active');
+      }
+    }
+
+    function toggleRole() {
+      var isStaff = document.getElementById('role-staff').checked;
+      var labelIdentifier = document.getElementById('label-identifier');
+      var inputIdentifier = document.getElementById('auth-identifier');
+      if (isStaff) {
+        labelIdentifier.innerText = 'Tài khoản Quản lý / Lễ tân';
+        inputIdentifier.placeholder = 'admin@grandhotel.vn';
+        inputIdentifier.value = 'admin@grandhotel.vn';
+      } else {
+        labelIdentifier.innerText = 'Số điện thoại hoặc Email khách hàng';
+        inputIdentifier.placeholder = '0901234567 hoặc email@domain.com';
+        inputIdentifier.value = 'nguyenvanan@gmail.com';
+      }
+    }
+
+    function handleLoginSubmit(event) {
+      var isStaff = document.getElementById('role-staff').checked;
+      var form = document.getElementById('login-form');
+      if (isStaff) {
+        form.action = 'dashboard.html';
+      } else {
+        form.action = '../check-booking.html';
+      }
+    }
+  </script>
+
+</body>
+</html>

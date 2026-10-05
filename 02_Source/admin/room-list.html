@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Lý Danh Sách Phòng - Grand Hotel Admin</title>
+  
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/style-admin.css">
+</head>
+<body>
+
+  <div class="admin-wrapper">
+    
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        GRAND <span>HOTEL</span> (Admin)
+      </div>
+      <ul class="admin-menu-list">
+        <li class="admin-menu-item"><a href="dashboard.html">📊 Bảng Điều Khiển</a></li>
+        <li class="admin-menu-item"><a href="room-list.html" class="active">🏨 Quản Lý Phòng</a></li>
+        <li class="admin-menu-item"><a href="room-add.html">➕ Thêm Phòng Mới</a></li>
+        <li class="admin-menu-item"><a href="booking-list.html">📝 Quản Lý Đơn Đặt</a></li>
+        <li class="admin-menu-item"><a href="../index.html" target="_blank">🌐 Xem Trang Khách</a></li>
+      </ul>
+      <div class="admin-sidebar-footer">
+        <a href="login.html">🚪 Đăng Xuất</a>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      
+      <header class="admin-topbar">
+        <div class="admin-topbar-title">Danh Mục Phòng Khách Sạn</div>
+        <div class="admin-user-info">
+          <div class="admin-avatar">AD</div>
+          <div>
+            <strong>Quản Trị Viên</strong>
+            <div style="font-size: 12px; color: var(--gray-color);">Bao Admin</div>
+          </div>
+        </div>
+      </header>
+
+      <main class="admin-body">
+        <div class="admin-card-box">
+          <div class="admin-card-header">
+            <div>
+              <h2 style="font-size: 18px; color: var(--primary-color);">Tất Cả Các Phòng (Hiện có 6 phòng mẫu)</h2>
+              <p style="font-size: 13px; color: var(--gray-color);">Kiểm soát trạng thái sẵn sàng đón khách hoặc bảo trì</p>
+            </div>
+            <div>
+              <a href="room-add.html" class="btn btn-gold btn-sm" style="padding: 10px 18px; font-size: 14px;">➕ Thêm Phòng Mới</a>
+            </div>
+          </div>
+
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Ảnh</th>
+                  <th>Số Phòng</th>
+                  <th>Tên Phòng</th>
+                  <th>Hạng Phòng</th>
+                  <th>Giá / Đêm</th>
+                  <th>Sức Chứa</th>
+                  <th>Trạng Thái</th>
+                  <th>Thao Tác</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=150&q=80" alt="Room 101" class="table-img"></td>
+                  <td><strong>P.101</strong></td>
+                  <td>Standard Cozy Single</td>
+                  <td>Standard</td>
+                  <td>850.000đ</td>
+                  <td>1 Khách</td>
+                  <td><span class="badge-room-empty">Còn Trống</span></td>
+                  <td>
+                    <div class="action-btns">
+                      <a href="room-add.html" class="btn btn-sm btn-edit">Sửa</a>
+                      <button class="btn btn-sm btn-delete" onclick="alert('Mô phỏng xóa phòng P.101')">Xóa</button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=150&q=80" alt="Room 201" class="table-img"></td>
+                  <td><strong>P.201</strong></td>
+                  <td>Deluxe Double City View</td>
+                  <td>Deluxe</td>
+                  <td>1.500.000đ</td>
+                  <td>2 Khách</td>
+                  <td><span class="badge-room-occupied">Đang Ở</span></td>
+                  <td>
+                    <div class="action-btns">
+                      <a href="room-add.html" class="btn btn-sm btn-edit">Sửa</a>
+                      <button class="btn btn-sm btn-delete" onclick="alert('Mô phỏng xóa phòng P.201')">Xóa</button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=150&q=80" alt="Room 301" class="table-img"></td>
+                  <td><strong>P.301</strong></td>
+                  <td>Deluxe Twin Two Beds</td>
+                  <td>Deluxe</td>
+                  <td>1.750.000đ</td>
+                  <td>2-3 Khách</td>
+                  <td><span class="badge-room-empty">Còn Trống</span></td>
+                  <td>
+                    <div class="action-btns">
+                      <a href="room-add.html" class="btn btn-sm btn-edit">Sửa</a>
+                      <button class="btn btn-sm btn-delete" onclick="alert('Mô phỏng xóa phòng P.301')">Xóa</button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=150&q=80" alt="Room 401" class="table-img"></td>
+                  <td><strong>P.401</strong></td>
+                  <td>Executive Premium Suite</td>
+                  <td>Suite</td>
+                  <td>2.800.000đ</td>
+                  <td>2 Khách</td>
+                  <td><span class="badge-room-occupied">Đang Ở</span></td>
+                  <td>
+                    <div class="action-btns">
+                      <a href="room-add.html" class="btn btn-sm btn-edit">Sửa</a>
+                      <button class="btn btn-sm btn-delete" onclick="alert('Mô phỏng xóa phòng P.401')">Xóa</button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=150&q=80" alt="Room 501" class="table-img"></td>
+                  <td><strong>P.501</strong></td>
+                  <td>Family Ocean & City Suite</td>
+                  <td>Suite</td>
+                  <td>3.200.000đ</td>
+                  <td>4 Khách</td>
+                  <td><span class="badge-room-repair">Đang Dọn Dẹp</span></td>
+                  <td>
+                    <div class="action-btns">
+                      <a href="room-add.html" class="btn btn-sm btn-edit">Sửa</a>
+                      <button class="btn btn-sm btn-delete" onclick="alert('Mô phỏng xóa phòng P.501')">Xóa</button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=150&q=80" alt="Room 601" class="table-img"></td>
+                  <td><strong>P.601</strong></td>
+                  <td>Royal President Suite</td>
+                  <td>President</td>
+                  <td>6.500.000đ</td>
+                  <td>4-6 Khách</td>
+                  <td><span class="badge-room-empty">Còn Trống</span></td>
+                  <td>
+                    <div class="action-btns">
+                      <a href="room-add.html" class="btn btn-sm btn-edit">Sửa</a>
+                      <button class="btn btn-sm btn-delete" onclick="alert('Mô phỏng xóa phòng P.601')">Xóa</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+</body>
+</html>

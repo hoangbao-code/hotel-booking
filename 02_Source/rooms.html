@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh Sách Phòng Nghỉ - Grand Hotel</title>
+  
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/style-rooms.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="index.html">GRAND <span>HOTEL</span></a>
+      </div>
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <ul>
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li><a href="rooms.html" class="active">Danh Sách Phòng</a></li>
+          <li><a href="services.html">Dịch Vụ</a></li>
+          <li><a href="about.html">Giới Thiệu</a></li>
+          <li><a href="contact.html">Liên Hệ</a></li>
+          <li><a href="check-booking.html">Tra Cứu Phòng & Đơn</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="rooms.html" class="btn btn-gold">Đặt Phòng Ngay</a>
+        <a href="admin/login.html" class="btn btn-user-auth">Đăng Ký / Đăng Nhập</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>DANH SÁCH PHÒNG NGHỈ</h1>
+      <p>Lựa chọn không gian nghỉ ngơi hoàn hảo cho chuyến đi của bạn</p>
+    </div>
+  </section>
+
+  <div class="container rooms-page-layout">
+
+    <aside class="filter-sidebar">
+      <h3>Bộ Lọc Tìm Kiếm</h3>
+
+      <form action="rooms.html" method="GET">
+        
+        <div class="filter-group">
+          <h4>Hạng Phòng</h4>
+          <div class="filter-list">
+            <label class="filter-item">
+              <input type="checkbox" name="type" value="standard" checked>
+              <span>Phòng Standard (4)</span>
+            </label>
+            <label class="filter-item">
+              <input type="checkbox" name="type" value="deluxe" checked>
+              <span>Phòng Deluxe (6)</span>
+            </label>
+            <label class="filter-item">
+              <input type="checkbox" name="type" value="suite" checked>
+              <span>Phòng Suite (3)</span>
+            </label>
+            <label class="filter-item">
+              <input type="checkbox" name="type" value="president">
+              <span>President Suite (1)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h4>Mức Giá (Mỗi đêm)</h4>
+          <div class="filter-list">
+            <label class="filter-item">
+              <input type="radio" name="price" value="all" checked>
+              <span>Tất cả mức giá</span>
+            </label>
+            <label class="filter-item">
+              <input type="radio" name="price" value="under-1m">
+              <span>Dưới 1.000.000đ</span>
+            </label>
+            <label class="filter-item">
+              <input type="radio" name="price" value="1m-2m">
+              <span>1.000.000đ - 2.500.000đ</span>
+            </label>
+            <label class="filter-item">
+              <input type="radio" name="price" value="over-2.5m">
+              <span>Trên 2.500.000đ</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h4>Tiện Nghi Đi Kèm</h4>
+          <div class="filter-list">
+            <label class="filter-item">
+              <input type="checkbox" name="amenity" value="breakfast" checked>
+              <span>Miễn phí ăn sáng</span>
+            </label>
+            <label class="filter-item">
+              <input type="checkbox" name="amenity" value="balcony">
+              <span>Có ban công hướng phố</span>
+            </label>
+            <label class="filter-item">
+              <input type="checkbox" name="amenity" value="bathtub" checked>
+              <span>Bồn tắm nằm cao cấp</span>
+            </label>
+            <label class="filter-item">
+              <input type="checkbox" name="amenity" value="wifi" checked>
+              <span>Wifi tốc độ cao</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Áp Dụng Bộ Lọc</button>
+      </form>
+    </aside>
+
+    <main class="rooms-catalog">
+      <div class="rooms-catalog-header">
+        <p>Hiển thị <strong>6</strong> hạng phòng phù hợp</p>
+        <div>
+          <label for="sort" style="font-size: 14px; font-weight: 600; margin-right: 8px;">Sắp xếp theo:</label>
+          <select id="sort" style="padding: 6px 12px; border-radius: 4px; border: 1px solid var(--border-color);">
+            <option>Giá: Thấp đến cao</option>
+            <option>Giá: Cao đến thấp</option>
+            <option>Được đánh giá cao</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="rooms-grid">
+
+        <article class="room-card">
+          <div class="room-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&q=80" alt="Standard Single Room" class="room-card-img">
+            <span class="room-card-badge">Phổ Thông</span>
+          </div>
+          <div class="room-card-body">
+            <h3 class="room-card-title">Standard Cozy Single</h3>
+            <div class="room-card-meta">
+              <span>📐 28m²</span>
+              <span>🛏 1 Giường Đơn</span>
+              <span>👥 1 Khách</span>
+            </div>
+            <p class="room-card-desc">Không gian ấm cúng, thiết kế hiện đại thích hợp cho các chuyến công tác ngắn ngày của bạn.</p>
+            <div class="room-card-footer">
+              <div class="room-card-price">850.000đ <small>/ đêm</small></div>
+              <a href="room-detail.html" class="btn btn-gold">Xem Chi Tiết</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room-card">
+          <div class="room-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=600&q=80" alt="Deluxe Double City View" class="room-card-img">
+            <span class="room-card-badge">Bán Chạy Nhất</span>
+          </div>
+          <div class="room-card-body">
+            <h3 class="room-card-title">Deluxe Double City View</h3>
+            <div class="room-card-meta">
+              <span>📐 36m²</span>
+              <span>🛏 1 Giường King</span>
+              <span>👥 2 Khách</span>
+            </div>
+            <p class="room-card-desc">Cửa sổ kính lớn chạm sàn ngắm toàn cảnh thành phố lung linh, ban công thoáng đãng đón gió.</p>
+            <div class="room-card-footer">
+              <div class="room-card-price">1.500.000đ <small>/ đêm</small></div>
+              <a href="room-detail.html" class="btn btn-gold">Xem Chi Tiết</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room-card">
+          <div class="room-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="Deluxe Twin Beds" class="room-card-img">
+            <span class="room-card-badge">Gia Đình / Bạn Bè</span>
+          </div>
+          <div class="room-card-body">
+            <h3 class="room-card-title">Deluxe Twin Two Beds</h3>
+            <div class="room-card-meta">
+              <span>📐 40m²</span>
+              <span>🛏 2 Giường Đôi</span>
+              <span>👥 2 - 3 Khách</span>
+            </div>
+            <p class="room-card-desc">Bố trí 2 giường riêng biệt tiện nghi, thích hợp cho nhóm bạn đồng hành hoặc đồng nghiệp.</p>
+            <div class="room-card-footer">
+              <div class="room-card-price">1.750.000đ <small>/ đêm</small></div>
+              <a href="room-detail.html" class="btn btn-gold">Xem Chi Tiết</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room-card">
+          <div class="room-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80" alt="Executive Premium Suite" class="room-card-img">
+            <span class="room-card-badge">Cao Cấp</span>
+          </div>
+          <div class="room-card-body">
+            <h3 class="room-card-title">Executive Premium Suite</h3>
+            <div class="room-card-meta">
+              <span>📐 58m²</span>
+              <span>🛏 1 Giường King Lớn</span>
+              <span>👥 2 Khách</span>
+            </div>
+            <p class="room-card-desc">Tích hợp phòng khách riêng biệt, bồn tắm sục massage Jacuzzi và dịch vụ phục vụ rượu vang chào mừng.</p>
+            <div class="room-card-footer">
+              <div class="room-card-price">2.800.000đ <small>/ đêm</small></div>
+              <a href="room-detail.html" class="btn btn-gold">Xem Chi Tiết</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room-card">
+          <div class="room-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80" alt="Family Suite Balcony" class="room-card-img">
+            <span class="room-card-badge">Gia Đình</span>
+          </div>
+          <div class="room-card-body">
+            <h3 class="room-card-title">Family Ocean & City Suite</h3>
+            <div class="room-card-meta">
+              <span>📐 65m²</span>
+              <span>🛏 2 Giường King</span>
+              <span>👥 4 Khách</span>
+            </div>
+            <p class="room-card-desc">Không gian sinh hoạt rộng mở với 2 phòng ngủ riêng tư, đầy đủ bàn trà và ban công ngắm cảnh.</p>
+            <div class="room-card-footer">
+              <div class="room-card-price">3.200.000đ <small>/ đêm</small></div>
+              <a href="room-detail.html" class="btn btn-gold">Xem Chi Tiết</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room-card">
+          <div class="room-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=600&q=80" alt="Royal President Suite" class="room-card-img">
+            <span class="room-card-badge">Thượng Hạng</span>
+          </div>
+          <div class="room-card-body">
+            <h3 class="room-card-title">Royal President Suite</h3>
+            <div class="room-card-meta">
+              <span>📐 110m²</span>
+              <span>🛏 2 Giường Hoàng Gia</span>
+              <span>👥 4 - 6 Khách</span>
+            </div>
+            <p class="room-card-desc">Hạng phòng cao cấp nhất tọa lạc tầng penthouse cao nhất với quản gia riêng và lối đi VIP độc quyền.</p>
+            <div class="room-card-footer">
+              <div class="room-card-price">6.500.000đ <small>/ đêm</small></div>
+              <a href="room-detail.html" class="btn btn-gold">Xem Chi Tiết</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <aside class="rooms-promo-sidebar">
+      <div class="promo-card">
+        <span class="promo-badge-tag">Ưu Đãi Hôm Nay</span>
+        <h4>Giảm 20% Đặt Trực Tiếp</h4>
+        <p>Nhập mã để nhận ngay chiết khấu 20% cho mọi hạng phòng từ 2 đêm trở lên.</p>
+        <div class="voucher-box">
+          <span class="voucher-code">GRAND2026</span>
+          <button type="button" class="voucher-copy-btn" onclick="navigator.clipboard.writeText('GRAND2026'); alert('Đã sao chép mã ưu đãi GRAND2026!');">Sao Chép</button>
+        </div>
+        <small style="color: var(--gray-color); font-size: 11.5px; display: block;">Áp dụng cho đặt phòng online hôm nay</small>
+      </div>
+
+      <div class="promo-card">
+        <h4>Vị Trí & Kết Nối Vàng</h4>
+        <p style="margin-bottom: 12px;">Tọa lạc ngay trung tâm thành phố, thuận tiện di chuyển đến các điểm tham quan.</p>
+        <div class="location-item">
+          <span class="icon">📍</span>
+          <span>123 Đường Trần Phú, Quận 1, TP. HCM</span>
+        </div>
+        <div class="location-item">
+          <span class="icon">🏛️</span>
+          <span>Cách Chợ Bến Thành 5 phút đi bộ</span>
+        </div>
+        <div class="location-item">
+          <span class="icon">✈️</span>
+          <span>Cách Sân bay Quốc tế 20 phút xe sang</span>
+        </div>
+        <a href="contact.html" class="btn btn-outline btn-sm" style="width: 100%; margin-top: 8px;">Xem Bản Đồ Khách Sạn</a>
+      </div>
+
+      <div class="hotline-box">
+        <div style="font-size: 26px; margin-bottom: 6px;">📞</div>
+        <h4>Cần Tư Vấn Đặt Phòng?</h4>
+        <p>Lễ tân Grand Hotel sẵn sàng hỗ trợ quý khách chọn phòng 24/7</p>
+        <a href="tel:19006868" class="hotline-number">1900 6868</a>
+        <a href="contact.html" class="btn btn-gold btn-sm" style="width: 100%;">Gửi Yêu Cầu Hỗ Trợ</a>
+      </div>
+
+      <div class="promo-card">
+        <h4>Đặc Quyền Khách Hàng</h4>
+        <div class="guarantee-list">
+          <div class="guarantee-item">
+            <span class="check">✓</span>
+            <span>Cam kết giá tốt nhất thị trường</span>
+          </div>
+          <div class="guarantee-item">
+            <span class="check">✓</span>
+            <span>Miễn phí bữa sáng buffet 5 sao</span>
+          </div>
+          <div class="guarantee-item">
+            <span class="check">✓</span>
+            <span>Hủy phòng miễn phí trước 24 giờ</span>
+          </div>
+          <div class="guarantee-item">
+            <span class="check">✓</span>
+            <span>Check-in sớm tùy tình trạng phòng</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>GRAND HOTEL</h3>
+        <p>Hệ thống khách sạn chuẩn 5 sao quốc tế mang đến trải nghiệm lưu trú và nghỉ dưỡng tuyệt vời nhất cho quý khách.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Liên Kết Nhanh</h3>
+        <ul>
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li><a href="rooms.html">Danh Sách Phòng</a></li>
+          <li><a href="services.html">Dịch Vụ Khách Sạn</a></li>
+          <li><a href="about.html">Về Chúng Tôi</a></li>
+          <li><a href="contact.html">Liên Hệ Hỗ Trợ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Khách Hàng</h3>
+        <ul>
+          <li><a href="check-booking.html">Tra Cứu Phòng & Đơn Đặt</a></li>
+          <li><a href="admin/login.html">Đăng Ký / Đăng Nhập</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Địa Chỉ</h3>
+        <p>📍 123 Đường Trần Phú, Quận 1, TP. Hồ Chí Minh</p>
+        <p>📞 Hotline: 1900 6868</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Grand Hotel. Đồ án Lập trình Web - Nhóm 01.</div>
+      <div>Designed with HTML5 & CSS3 Responsive.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đặt Phòng Thành Công - Grand Hotel</title>
+  
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/style-booking.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="index.html">GRAND <span>HOTEL</span></a>
+      </div>
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <ul>
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li><a href="rooms.html">Danh Sách Phòng</a></li>
+          <li><a href="services.html">Dịch Vụ</a></li>
+          <li><a href="about.html">Giới Thiệu</a></li>
+          <li><a href="contact.html">Liên Hệ</a></li>
+          <li><a href="check-booking.html">Tra Cứu Phòng & Đơn</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-outline">Về Trang Chủ</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="success-container-box">
+      <div class="success-badge-icon">✓</div>
+      <h1 style="font-size: 28px; color: var(--primary-color); margin-bottom: 8px;">ĐẶT PHÒNG THÀNH CÔNG!</h1>
+      <p style="color: var(--gray-color); font-size: 15px;">Cảm ơn quý khách đã tin tưởng lựa chọn dịch vụ của Grand Hotel. Thông tin chi tiết đã được gửi đến email <strong>an.nguyen@gmail.com</strong>.</p>
+      
+      <div>
+        <span style="font-size: 13px; color: var(--gray-color); text-transform: uppercase; letter-spacing: 1px; display: block; margin-top: 15px;">Mã Đặt Phòng Của Bạn (Booking ID)</span>
+        <div class="booking-code-pill">#GH2026-9988</div>
+      </div>
+
+      <table class="success-info-table">
+        <tbody>
+          <tr>
+            <td>Họ và tên khách hàng:</td>
+            <td><strong>Nguyễn Văn An</strong></td>
+          </tr>
+          <tr>
+            <td>Số điện thoại liên hệ:</td>
+            <td><strong>0912 345 678</strong></td>
+          </tr>
+          <tr>
+            <td>Phòng đã đặt:</td>
+            <td><strong>Deluxe Double City View (Phòng 201)</strong></td>
+          </tr>
+          <tr>
+            <td>Thời gian lưu trú:</td>
+            <td><strong>10/10/2026 ➔ 12/10/2026 (2 Đêm)</strong></td>
+          </tr>
+          <tr>
+            <td>Số lượng khách:</td>
+            <td><strong>2 Người lớn</strong></td>
+          </tr>
+          <tr>
+            <td>Phương thức thanh toán:</td>
+            <td><strong>Chuyển khoản QR Ngân hàng</strong></td>
+          </tr>
+          <tr>
+            <td>Trạng thái thanh toán:</td>
+            <td><span class="badge-status badge-confirmed">Đã xác nhận đặt cọc</span></td>
+          </tr>
+          <tr>
+            <td>Tổng giá trị thanh toán:</td>
+            <td><strong style="color: var(--secondary-color); font-size: 18px;">3.240.000 VNĐ</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <button onclick="window.print()" class="btn btn-outline">🖨️ In Phiếu Xác Nhận</button>
+        <a href="check-booking.html" class="btn btn-gold">Tra Cứu Tình Trạng Đơn</a>
+        <a href="index.html" class="btn btn-primary">Quay Lại Trang Chủ</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>GRAND HOTEL</h3>
+        <p>Hệ thống khách sạn chuẩn 5 sao quốc tế mang đến trải nghiệm lưu trú và nghỉ dưỡng tuyệt vời nhất cho quý khách.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Liên Kết Nhanh</h3>
+        <ul>
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li><a href="rooms.html">Danh Sách Phòng</a></li>
+          <li><a href="services.html">Dịch Vụ Khách Sạn</a></li>
+          <li><a href="about.html">Về Chúng Tôi</a></li>
+          <li><a href="contact.html">Liên Hệ Hỗ Trợ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Khách Hàng</h3>
+        <ul>
+          <li><a href="check-booking.html">Tra Cứu Phòng & Đơn Đặt</a></li>
+          <li><a href="admin/login.html">Đăng Ký / Đăng Nhập</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Địa Chỉ</h3>
+        <p>📍 123 Đường Trần Phú, Quận 1, TP. Hồ Chí Minh</p>
+        <p>📞 Hotline: 1900 6868</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Grand Hotel. Đồ án Lập trình Web - Nhóm 01.</div>
+      <div>Designed with HTML5 & CSS3 Responsive.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

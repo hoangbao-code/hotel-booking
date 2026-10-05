@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xác Nhận Đặt Phòng - Grand Hotel</title>
+  
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/style-booking.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="index.html">GRAND <span>HOTEL</span></a>
+      </div>
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <ul>
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li><a href="rooms.html">Danh Sách Phòng</a></li>
+          <li><a href="services.html">Dịch Vụ</a></li>
+          <li><a href="about.html">Giới Thiệu</a></li>
+          <li><a href="contact.html">Liên Hệ</a></li>
+          <li><a href="check-booking.html">Tra Cứu Phòng & Đơn</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="rooms.html" class="btn btn-outline">&larr; Đổi Phòng Khác</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-header-simple">
+    <div class="container">
+      <h1>THÔNG TIN ĐẶT PHÒNG & THANH TOÁN</h1>
+      <p>Vui lòng điền chính xác thông tin để chúng tôi gửi xác nhận và giữ phòng cho quý khách</p>
+    </div>
+  </div>
+
+  <main class="container booking-checkout-layout">
+
+    <div class="booking-form-card">
+      <h2>1. Thông Tin Khách Hàng</h2>
+      
+      <form action="booking-success.html" method="GET">
+        <div class="form-row-2">
+          <div class="form-field-group">
+            <label for="cust-name">Họ và tên người đặt <span class="req">*</span></label>
+            <input type="text" id="cust-name" name="fullname" required placeholder="Ví dụ: Nguyễn Văn An" value="Nguyễn Văn An">
+          </div>
+          <div class="form-field-group">
+            <label for="cust-phone">Số điện thoại <span class="req">*</span></label>
+            <input type="tel" id="cust-phone" name="phone" required placeholder="0901234567" value="0912345678">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-field-group">
+            <label for="cust-email">Địa chỉ Email <span class="req">*</span></label>
+            <input type="email" id="cust-email" name="email" required placeholder="an.nguyen@gmail.com" value="an.nguyen@gmail.com">
+          </div>
+          <div class="form-field-group">
+            <label for="cust-cccd">Số CCCD / Hộ chiếu <span class="req">*</span></label>
+            <input type="text" id="cust-cccd" name="id_card" required placeholder="07920100xxxx" value="079201009876">
+          </div>
+        </div>
+
+        <h2 style="margin-top: 25px;">2. Thời Gian & Số Lượng Khách</h2>
+        
+        <div class="form-row-2">
+          <div class="form-field-group">
+            <label for="book-in">Ngày nhận phòng (Check-in)</label>
+            <input type="date" id="book-in" name="checkin" required value="2026-10-10">
+          </div>
+          <div class="form-field-group">
+            <label for="book-out">Ngày trả phòng (Check-out)</label>
+            <input type="date" id="book-out" name="checkout" required value="2026-10-12">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-field-group">
+            <label for="book-adults">Số người lớn</label>
+            <select id="book-adults" name="adults">
+              <option value="1">1 Người</option>
+              <option value="2" selected>2 Người</option>
+              <option value="3">3 Người</option>
+            </select>
+          </div>
+          <div class="form-field-group">
+            <label for="book-children">Trẻ em (dưới 12 tuổi)</label>
+            <select id="book-children" name="children">
+              <option value="0" selected>0 Trẻ em</option>
+              <option value="1">1 Trẻ em</option>
+              <option value="2">2 Trẻ em</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field-group">
+          <label for="special-notes">Yêu cầu đặc biệt (Không bắt buộc)</label>
+          <textarea id="special-notes" name="notes" rows="3" placeholder="Ví dụ: Phòng tầng cao, 1 giường lớn, nhận phòng muộn sau 18h..."></textarea>
+        </div>
+
+        <h2 style="margin-top: 25px;">3. Chọn Phương Thức Thanh Toán</h2>
+        
+        <div class="payment-methods-box">
+          <label class="payment-option-label">
+            <input type="radio" name="payment_method" value="banking" checked>
+            <div>
+              <strong>Chuyển khoản QR Ngân hàng (Khuyên dùng)</strong>
+              <div style="font-size: 13px; color: var(--gray-color);">Quét mã VietQR thanh toán nhanh chóng, tự động xác nhận sau 1 phút</div>
+            </div>
+          </label>
+
+          <label class="payment-option-label">
+            <input type="radio" name="payment_method" value="credit_card">
+            <div>
+              <strong>Thẻ tín dụng / Ghi nợ quốc tế (Visa, Mastercard, JCB)</strong>
+              <div style="font-size: 13px; color: var(--gray-color);">Cổng thanh toán mã hóa bảo mật chuẩn PCI DSS</div>
+            </div>
+          </label>
+
+          <label class="payment-option-label">
+            <input type="radio" name="payment_method" value="pay_at_hotel">
+            <div>
+              <strong>Thanh toán trực tiếp khi nhận phòng tại quầy lễ tân</strong>
+              <div style="font-size: 13px; color: var(--gray-color);">Chỉ áp dụng giữ phòng đến trước 18:00 của ngày nhận phòng</div>
+            </div>
+          </label>
+        </div>
+
+        <div style="margin-bottom: 25px;">
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer;">
+            <input type="checkbox" required checked>
+            <span>Tôi đồng ý với các <a href="about.html" style="color: var(--primary-color); text-decoration: underline;">điều khoản và chính sách</a> hủy phòng của Grand Hotel.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-gold" style="width: 100%; padding: 16px; font-size: 18px;">
+          XÁC NHẬN VÀ HOÀN TẤT ĐẶT PHÒNG
+        </button>
+      </form>
+    </div>
+
+    <aside>
+      <div class="booking-summary-card">
+        <h2>Tóm Tắt Đơn Phòng</h2>
+        
+        <div class="selected-room-mini">
+          <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=300&q=80" alt="Deluxe Double">
+          <div>
+            <h3 style="font-size: 16px; color: var(--primary-color);">Deluxe Double City View</h3>
+            <div style="font-size: 13px; color: var(--gray-color); margin-top: 4px;">Hạng phòng: Deluxe</div>
+            <div style="font-size: 13px; color: var(--secondary-color); font-weight: 600; margin-top: 4px;">Tặng kèm Buffet sáng</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 20px; font-size: 14px; line-height: 1.8;">
+          <p><strong>Ngày nhận:</strong> 14:00 - Thứ Bảy, 10/10/2026</p>
+          <p><strong>Ngày trả:</strong> 12:00 - Thứ Hai, 12/10/2026</p>
+          <p><strong>Thời gian lưu trú:</strong> 2 đêm (1 phòng)</p>
+          <p><strong>Số lượng khách:</strong> 2 Người lớn</p>
+        </div>
+
+        <div class="price-breakdown-list">
+          <div class="price-item-row">
+            <span>Đơn giá phòng (2 đêm x 1.500.000đ):</span>
+            <span>3.000.000đ</span>
+          </div>
+          <div class="price-item-row">
+            <span>Thuế GTGT (VAT 8%):</span>
+            <span>240.000đ</span>
+          </div>
+          <div class="price-item-row">
+            <span>Phí dịch vụ khách sạn (5%):</span>
+            <span>150.000đ</span>
+          </div>
+          <div class="price-item-row" style="color: var(--success-color);">
+            <span>Ưu đãi đặt phòng trực tuyến:</span>
+            <span>- 150.000đ</span>
+          </div>
+          <div class="price-total-row" style="margin-top: 10px;">
+            <span>TỔNG THANH TOÁN:</span>
+            <span style="color: var(--secondary-color);">3.240.000đ</span>
+          </div>
+        </div>
+
+        <div style="background-color: #f8fafc; padding: 14px; border-radius: 6px; font-size: 13px; color: var(--gray-color);">
+          🛡️ Đơn đặt phòng của bạn được bảo đảm tức thì. Thông tin xác nhận sẽ được gửi qua email ngay sau khi hoàn tất.
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>GRAND HOTEL</h3>
+        <p>Hệ thống khách sạn chuẩn 5 sao quốc tế mang đến trải nghiệm lưu trú và nghỉ dưỡng tuyệt vời nhất cho quý khách.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Liên Kết Nhanh</h3>
+        <ul>
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li><a href="rooms.html">Danh Sách Phòng</a></li>
+          <li><a href="services.html">Dịch Vụ Khách Sạn</a></li>
+          <li><a href="about.html">Về Chúng Tôi</a></li>
+          <li><a href="contact.html">Liên Hệ Hỗ Trợ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Khách Hàng</h3>
+        <ul>
+          <li><a href="check-booking.html">Tra Cứu Phòng & Đơn Đặt</a></li>
+          <li><a href="admin/login.html">Đăng Ký / Đăng Nhập</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Địa Chỉ</h3>
+        <p>📍 123 Đường Trần Phú, Quận 1, TP. Hồ Chí Minh</p>
+        <p>📞 Hotline: 1900 6868</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Grand Hotel. Đồ án Lập trình Web - Nhóm 01.</div>
+      <div>Designed with HTML5 & CSS3 Responsive.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

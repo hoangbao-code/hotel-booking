@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thêm Phòng Mới - Grand Hotel Admin</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/style-admin.css">
+</head>
+<body>
+
+  <div class="admin-wrapper">
+    
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        GRAND <span>HOTEL</span> (Admin)
+      </div>
+      <ul class="admin-menu-list">
+        <li class="admin-menu-item"><a href="dashboard.html">📊 Bảng Điều Khiển</a></li>
+        <li class="admin-menu-item"><a href="room-list.html">🏨 Quản Lý Phòng</a></li>
+        <li class="admin-menu-item"><a href="room-add.html" class="active">➕ Thêm Phòng Mới</a></li>
+        <li class="admin-menu-item"><a href="booking-list.html">📝 Quản Lý Đơn Đặt</a></li>
+        <li class="admin-menu-item"><a href="../index.html" target="_blank">🌐 Xem Trang Khách</a></li>
+      </ul>
+      <div class="admin-sidebar-footer">
+        <a href="login.html">🚪 Đăng Xuất</a>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-title">Thêm / Cập Nhật Thông Tin Phòng</div>
+        <div class="admin-user-info">
+          <div class="admin-avatar">AD</div>
+          <div><strong>Quản Trị Viên</strong></div>
+        </div>
+      </header>
+
+      <main class="admin-body">
+        <div class="admin-card-box">
+          <div class="admin-card-header">
+            <div>
+              <h2 style="font-size: 18px; color: var(--primary-color);">Biểu Mẫu Nhập Liệu Phòng Mới</h2>
+              <p style="font-size: 13px; color: var(--gray-color);">Điền thông số phòng để hiển thị lên hệ thống tìm kiếm cho khách hàng</p>
+            </div>
+            <div>
+              <a href="room-list.html" class="btn btn-outline btn-sm">Quay Lại Danh Sách</a>
+            </div>
+          </div>
+
+          <form action="room-list.html" method="GET">
+            <div class="admin-form-grid">
+              
+              <div class="admin-form-group">
+                <label for="room-no">Số phòng / Mã phòng *</label>
+                <input type="text" id="room-no" name="room_no" required placeholder="Ví dụ: P.202" value="P.202">
+              </div>
+
+              <div class="admin-form-group">
+                <label for="room-title">Tên hiển thị của phòng *</label>
+                <input type="text" id="room-title" name="title" required placeholder="Ví dụ: Deluxe River View" value="Deluxe River View">
+              </div>
+
+              <div class="admin-form-group">
+                <label for="room-cat">Hạng phòng (Category) *</label>
+                <select id="room-cat" name="category" required>
+                  <option value="standard">Standard Room</option>
+                  <option value="deluxe" selected>Deluxe Room</option>
+                  <option value="suite">Executive Suite</option>
+                  <option value="president">President Suite</option>
+                </select>
+              </div>
+
+              <div class="admin-form-group">
+                <label for="room-price">Đơn giá thuê mỗi đêm (VNĐ) *</label>
+                <input type="number" id="room-price" name="price" required placeholder="1500000" value="1650000">
+              </div>
+
+              <div class="admin-form-group">
+                <label for="room-area">Diện tích phòng (m²)</label>
+                <input type="number" id="room-area" name="area" placeholder="38" value="38">
+              </div>
+
+              <div class="admin-form-group">
+                <label for="room-max">Sức chứa tối đa (Khách)</label>
+                <input type="number" id="room-max" name="capacity" placeholder="2" value="2">
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label for="room-img">Hình ảnh đại diện phòng *</label>
+                <input type="file" id="room-img" name="image" accept="image/*">
+                <small style="color: var(--gray-color); font-size: 12px; margin-top: 4px; display: block;">Hỗ trợ định dạng JPG, PNG, WEBP. Dung lượng tối đa 5MB.</small>
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label>Các tiện ích trang bị sẵn trong phòng</label>
+                <div class="checkbox-group-grid">
+                  <label><input type="checkbox" checked> Wifi tốc độ cao</label>
+                  <label><input type="checkbox" checked> Bồn tắm nằm</label>
+                  <label><input type="checkbox" checked> Smart TV 4K</label>
+                  <label><input type="checkbox" checked> Máy sấy tóc</label>
+                  <label><input type="checkbox" checked> Két sắt bảo mật</label>
+                  <label><input type="checkbox"> Ban công view sông</label>
+                  <label><input type="checkbox"> Máy pha cafe</label>
+                  <label><input type="checkbox"> Bữa sáng miễn phí</label>
+                </div>
+              </div>
+
+              <div class="admin-form-group full-width">
+                <label for="room-desc">Mô tả chi tiết phòng</label>
+                <textarea id="room-desc" name="description" rows="4" placeholder="Nhập bài viết giới thiệu không gian và dịch vụ của phòng...">Phòng Deluxe River View sở hữu tầm nhìn trực diện hướng sông Sài Gòn êm đềm, thiết kế đón ánh sáng tự nhiên tạo cảm giác thoáng đãng và dễ chịu cho kỳ nghỉ của bạn.</textarea>
+              </div>
+
+              <div class="admin-form-group">
+                <label for="room-status">Trạng thái khởi tạo ban đầu</label>
+                <select id="room-status" name="status">
+                  <option value="empty" selected>Sẵn sàng đón khách (Còn trống)</option>
+                  <option value="repair">Đang sửa chữa / Bảo trì</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div style="margin-top: 25px; display: flex; gap: 15px;">
+              <button type="submit" class="btn btn-gold" style="padding: 12px 30px;">Lưu Thông Tin Phòng</button>
+              <a href="room-list.html" class="btn btn-outline" style="padding: 12px 20px;">Hủy Bỏ</a>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </div>
+
+</body>
+</html>

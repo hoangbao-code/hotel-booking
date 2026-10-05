@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tra Cứu Kỳ Nghỉ & Thông Tin Đặt Phòng - Grand Hotel</title>
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/style-booking.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="index.html">GRAND <span>HOTEL</span></a>
+      </div>
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <ul>
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li><a href="rooms.html">Danh Sách Phòng</a></li>
+          <li><a href="services.html">Dịch Vụ</a></li>
+          <li><a href="about.html">Giới Thiệu</a></li>
+          <li><a href="contact.html">Liên Hệ</a></li>
+          <li><a href="check-booking.html" class="active">Tra Cứu Phòng & Đơn</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="rooms.html" class="btn btn-gold">Đặt Phòng Ngay</a>
+        <a href="admin/login.html" class="btn btn-user-auth">Đăng Ký / Đăng Nhập</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>TRA CỨU KỲ NGHỈ CỦA QUÝ KHÁCH</h1>
+      <p>Kiểm tra thông tin chi tiết phòng nghỉ, lịch trình nhận phòng và đặc quyền kỳ nghỉ bạn đã đặt tại Grand Hotel</p>
+    </div>
+  </section>
+
+  <main class="container">
+    
+    <div class="search-booking-panel">
+      <div class="lookup-type-selector">
+        <label class="lookup-type-option">
+          <input type="radio" name="lookup_mode" value="daily" id="mode-daily" checked onchange="toggleGuestLookup()">
+          <span>Tra Cứu Theo Ngày Nhận Phòng</span>
+        </label>
+        <label class="lookup-type-option">
+          <input type="radio" name="lookup_mode" value="monthly" id="mode-monthly" onchange="toggleGuestLookup()">
+          <span>Tra Cứu Các Chuyến Đi Theo Tháng / Năm</span>
+        </label>
+      </div>
+
+      <form action="check-booking.html" method="GET">
+        <div class="lookup-inputs-row">
+          <div class="form-field-group" style="margin-bottom: 0;">
+            <label for="guest-identity">Số Điện Thoại Hoặc Email Đặt Phòng</label>
+            <input type="text" id="guest-identity" name="guest_identity" value="0901 234 567" required placeholder="0901 234 567 hoặc email@domain.com">
+          </div>
+
+          <div class="form-field-group" id="guest-field-date" style="margin-bottom: 0;">
+            <label for="search-date">Ngày Nhận Phòng (Check-in)</label>
+            <input type="date" id="search-date" name="checkin_date" value="2026-10-10">
+          </div>
+
+          <div class="form-field-group" id="guest-field-month" style="display: none; margin-bottom: 0;">
+            <label for="search-month">Chọn Tháng Chuyến Đi</label>
+            <select id="search-month" name="trip_month">
+              <option value="1">Tháng 01</option>
+              <option value="2">Tháng 02</option>
+              <option value="3">Tháng 03</option>
+              <option value="4">Tháng 04</option>
+              <option value="5">Tháng 05</option>
+              <option value="6">Tháng 06</option>
+              <option value="7">Tháng 07</option>
+              <option value="8">Tháng 08</option>
+              <option value="9">Tháng 09</option>
+              <option value="10" selected>Tháng 10</option>
+              <option value="11">Tháng 11</option>
+              <option value="12">Tháng 12</option>
+            </select>
+          </div>
+
+          <div class="form-field-group" id="guest-field-year" style="display: none; margin-bottom: 0;">
+            <label for="search-year">Chọn Năm</label>
+            <select id="search-year" name="trip_year">
+              <option value="2026" selected>Năm 2026</option>
+              <option value="2027">Năm 2027</option>
+            </select>
+          </div>
+
+          <div>
+            <button type="submit" class="btn btn-gold" style="padding: 13px 26px;">Tra Cứu Kỳ Nghỉ</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <article class="guest-voucher-card">
+      <div class="voucher-header">
+        <div class="voucher-header-title">
+          <h3>PHIẾU XÁC NHẬN ĐẶT PHÒNG NGHỈ DƯỠNG (BOOKING VOUCHER)</h3>
+          <span>Mã đơn đặt phòng: <strong style="color: var(--primary-color);">#GH2026-9988</strong> · Ngày tạo đơn: 02/10/2026</span>
+        </div>
+        <span class="badge-status badge-confirmed" style="font-size: 13px; padding: 7px 16px;">✓ Đã Xác Nhận &amp; Đã Thanh Toán</span>
+      </div>
+
+      <div class="voucher-body">
+        <div class="voucher-grid">
+          
+          <div>
+            <div class="voucher-room-img-box">
+              <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80" alt="Deluxe Double City View">
+              <div class="caption">Hạng phòng: Deluxe Double City View</div>
+            </div>
+            <div style="margin-top: 14px; font-size: 13px; color: var(--gray-color); line-height: 1.6;">
+              Tọa lạc tầng 12, tầm nhìn panorama ôm trọn vẻ đẹp thành phố, không gian thư thái tiêu chuẩn 5 sao quốc tế.
+            </div>
+          </div>
+
+          <div class="voucher-info-section">
+            <h4>THÔNG TIN KỲ NGHỈ CỦA BẠN</h4>
+            
+            <div class="voucher-meta-list">
+              <div class="voucher-meta-row">
+                <span style="color: var(--gray-color); width: 140px;">Khách lưu trú:</span>
+                <strong>Nguyễn Văn An (0901 234 567)</strong>
+              </div>
+              <div class="voucher-meta-row">
+                <span style="color: var(--gray-color); width: 140px;">Email liên hệ:</span>
+                <span>an.nguyen@gmail.com</span>
+              </div>
+              <div class="voucher-meta-row">
+                <span style="color: var(--gray-color); width: 140px;">Ngày nhận phòng:</span>
+                <strong>14:00 - Thứ Bảy, 10/10/2026</strong>
+              </div>
+              <div class="voucher-meta-row">
+                <span style="color: var(--gray-color); width: 140px;">Ngày trả phòng:</span>
+                <strong>12:00 - Thứ Hai, 12/10/2026</strong> <small style="color: var(--secondary-color); font-weight: 700;">(2 Đêm)</small>
+              </div>
+              <div class="voucher-meta-row">
+                <span style="color: var(--gray-color); width: 140px;">Số lượng khách:</span>
+                <span>2 Người lớn (1 Giường King cỡ lớn)</span>
+              </div>
+              <div class="voucher-meta-row">
+                <span style="color: var(--gray-color); width: 140px;">Yêu cầu đặc biệt:</span>
+                <span>Phòng tầng cao không hút thuốc, chuẩn bị trà thảo mộc</span>
+              </div>
+            </div>
+
+            <div class="voucher-privileges-box">
+              <h5>ĐẶC QUYỀN ĐÃ BAO GỒM TRONG KỲ NGHỈ</h5>
+              <div class="voucher-privilege-item">
+                <span>☕</span>
+                <span>Miễn phí 02 suất ăn sáng Buffet chuẩn 5 sao mỗi ngày tại nhà hàng</span>
+              </div>
+              <div class="voucher-privilege-item">
+                <span>🏊‍♂️</span>
+                <span>Miễn phí sử dụng hồ bơi vô cực &amp; phòng tập Gym cao cấp 24/7</span>
+              </div>
+              <div class="voucher-privilege-item">
+                <span>🚗</span>
+                <span>Dịch vụ xe sang đưa đón sân bay 1 chiều miễn phí</span>
+              </div>
+              <div class="voucher-privilege-item">
+                <span>📶</span>
+                <span>Wifi tốc độ cao không giới hạn &amp; Nước suối, trà, cà phê tại phòng</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="voucher-price-box">
+              <h4>CHI TIẾT THANH TOÁN</h4>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px; color: var(--gray-color); margin-bottom: 8px;">
+                <span>Giá phòng (2 đêm):</span>
+                <span>3.000.000đ</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px; color: var(--gray-color); margin-bottom: 8px;">
+                <span>Thuế VAT &amp; Phí phục vụ:</span>
+                <span>240.000đ</span>
+              </div>
+              <div style="border-top: 1px dashed var(--border-color); padding-top: 12px; margin-top: 10px;">
+                <span style="font-size: 13px; font-weight: 600; color: var(--gray-color);">TỔNG CỘNG ĐÃ THANH TOÁN:</span>
+                <div class="total-amount">3.240.000đ</div>
+                <div style="font-size: 12.5px; color: var(--success-color); font-weight: 600;">
+                  ✓ Đã thanh toán qua VNPAY QR (Mã GD: #VN99281)
+                </div>
+              </div>
+            </div>
+
+            <div class="guest-action-btns">
+              <button type="button" class="btn btn-gold" onclick="window.print()">🖨️ In Phiếu Xác Nhận / Voucher</button>
+              <a href="contact.html" class="btn btn-outline">📍 Chỉ Đường Đến Khách Sạn</a>
+              <a href="contact.html" class="btn btn-outline" style="font-size: 13px;">📞 Yêu Cầu Đổi Lịch / Hỗ Trợ</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <div class="check-table-wrap">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+        <h3 style="font-size: 19px; color: var(--primary-color);">Lịch Sử Các Chuyến Đi Của Bạn Tại Grand Hotel</h3>
+        <span style="font-size: 13px; color: var(--gray-color);">Tìm thấy 2 kỳ nghỉ liên kết với số điện thoại 0901 234 567</span>
+      </div>
+
+      <table class="table-custom">
+        <thead>
+          <tr>
+            <th>Mã Đơn Đặt</th>
+            <th>Hạng Phòng Nghỉ</th>
+            <th>Thời Gian Lưu Trú</th>
+            <th>Số Đêm</th>
+            <th>Tổng Chi Phí</th>
+            <th>Trạng Thái Kỳ Nghỉ</th>
+            <th>Thao Tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color: var(--primary-color);">#GH2026-9988</strong></td>
+            <td>Deluxe Double City View</td>
+            <td>10/10/2026 &rarr; 12/10/2026</td>
+            <td>2 Đêm</td>
+            <td><strong>3.240.000đ</strong></td>
+            <td><span class="badge-status badge-confirmed">Sắp Tới (Đã Xác Nhận)</span></td>
+            <td>
+              <a href="booking-success.html" class="btn btn-gold" style="padding: 6px 14px; font-size: 12px;">Xem Voucher</a>
+            </td>
+          </tr>
+          <tr>
+            <td><strong style="color: var(--primary-color);">#GH2026-8871</strong></td>
+            <td>Standard Cozy Single</td>
+            <td>15/08/2026 &rarr; 16/08/2026</td>
+            <td>1 Đêm</td>
+            <td><strong>850.000đ</strong></td>
+            <td><span class="badge-status" style="background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0;">Đã Hoàn Thành</span></td>
+            <td>
+              <a href="room-detail.html" class="btn btn-outline" style="padding: 6px 14px; font-size: 12px;">Đặt Lại Phòng Này</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="checkin-guide-card">
+      <div>
+        <h4 style="font-size: 17px; color: var(--primary-color); margin-bottom: 6px;">Hướng Dẫn Thủ Tục Check-in Nhanh Chóng</h4>
+        <p style="font-size: 13.5px; color: var(--gray-color); max-width: 750px; line-height: 1.6;">
+          Khi đến khách sạn tại 123 Đường Trần Phú, Quận 1, quý khách chỉ cần xuất trình Căn cước công dân / Hộ chiếu cùng Mã đơn đặt phòng <strong>#GH2026-9988</strong> tại quầy lễ tân tầng 1 để nhận phòng trong vòng 3 phút.
+        </p>
+      </div>
+      <div style="flex-shrink: 0;">
+        <a href="tel:19006868" class="btn btn-gold" style="white-space: nowrap;">Hotline Quản Gia: 1900 6868</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>GRAND HOTEL</h3>
+        <p>Hệ thống khách sạn chuẩn 5 sao quốc tế mang đến trải nghiệm lưu trú và nghỉ dưỡng tuyệt vời nhất cho quý khách.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Liên Kết Nhanh</h3>
+        <ul>
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li><a href="rooms.html">Danh Sách Phòng</a></li>
+          <li><a href="services.html">Dịch Vụ Khách Sạn</a></li>
+          <li><a href="about.html">Về Chúng Tôi</a></li>
+          <li><a href="contact.html">Liên Hệ Hỗ Trợ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Khách Hàng</h3>
+        <ul>
+          <li><a href="check-booking.html">Tra Cứu Phòng & Đơn Đặt</a></li>
+          <li><a href="admin/login.html">Đăng Ký / Đăng Nhập</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Địa Chỉ</h3>
+        <p>📍 123 Đường Trần Phú, Quận 1, TP. Hồ Chí Minh</p>
+        <p>📞 Hotline: 1900 6868</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Grand Hotel. Đồ án Lập trình Web - Nhóm 01.</div>
+      <div>Designed with HTML5 & CSS3 Responsive.</div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleGuestLookup() {
+      var isMonthly = document.getElementById('mode-monthly').checked;
+      var dateField = document.getElementById('guest-field-date');
+      var monthField = document.getElementById('guest-field-month');
+      var yearField = document.getElementById('guest-field-year');
+      if (isMonthly) {
+        dateField.style.display = 'none';
+        monthField.style.display = 'block';
+        yearField.style.display = 'block';
+      } else {
+        dateField.style.display = 'block';
+        monthField.style.display = 'none';
+        yearField.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
